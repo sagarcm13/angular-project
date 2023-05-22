@@ -1,0 +1,25 @@
+<div class="">
+    <ol class="w-100 d-flex flex-column mb-0 ps-3"[ngClass]="view()">
+        <li *ngFor="let todo of list()" class="border border-gray border-2 rounded-3 m-1 p-2">
+            <div class="view" >
+                <div class="w-100 d-grid ">
+                    <a class="btn text-light text-start" data-bs-toggle="collapse" href="{{'#'+ todo.idset}}"
+                        role="button" aria-expanded="false" aria-controls="collapseExample" [ngClass]="todo.strike">
+                        {{todo.title}}
+                    </a>
+                </div>
+                <div class="collapse" id={{todo.idset}}>
+                    <div class="card card-body bg-dark" [ngClass]="todo.strike">
+                        <div class="none" (click)="edit(todo)">
+                            {{todo.desc}}
+                        </div>
+                    </div>
+                    <input type="checkbox" [checked]="todo.strike == 'text-decoration-line-through'"
+                        class="form-check-input m-2" name="check" (click)="checked(todo)">
+                    <label class="form-check-label m-1" for="check">mark as done</label>
+                    <button class="btn btn-danger btn-sm ms-5" (click)="removed(todo)"> remove</button>
+                </div>
+            </div>
+        </li>
+    </ol>
+</div>

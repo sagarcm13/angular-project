@@ -1,0 +1,10 @@
+<div class="adding todo d-flex flex-column m-2 ">
+    <input type="text" (input)="title($event)" placeholder="Title" class="m-0 p-2 bg-dark text-light border-white border-2 rounded-1">
+    <!-- <p> {{data}} </p> -->
+    <textarea name="description" class="bg-dark text-light m-0 p-2 rounded-1 border-2 border-white text-prewrap"placeholder="Note" id="" cols="5" (input)="desc($event)" rows="5"></textarea>
+    <!-- <p> {{data2}} </p> -->
+    <div class=" d-flex justify-content-center m-2 ">
+        <button class="btn btn-primary btn-lg m-2" (click)="addingTodo()">Add Todo</button>
+        <button class="btn btn-primary btn-lg m-2" (click)="discard()">Discard</button>
+    </div>
+</div>
